@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <!--GBDA228 Final Project, made by Charlene Lee-->
+    <meta charset="utf-8">
+    <!--This is embed code for Google Fonts-->
+    <link rel="icon" type="image/png" href="flower_doodle.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Ralew
+                ay:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+    /* General Styling */
+    .outer-container {
+        width: 1440px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .content-container {
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 150px;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+    }
+
+    .caveat {
+        font-family: "Caveat", cursive;
+        font-size: 48px;
+    }
+
+    p {
+        color: #333;
+        font-size: 18px;
+        margin-bottom: 16px;
+        line-height: 1.5;        
+    }
+
+    h1, h2, h3 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .divider-container {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        padding: 0;
+    }
+
+    .divider-text {              
+        font-family: "Caveat";
+        font-size: 48px;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+
+    /* Nav Styling */
+    .navbar {
+        position: fixed;
+        width: 1440px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        padding: 20px 0;
+        border-bottom: 2px solid #ededed;
+        z-index: 1000;
+    }
+
+    .img-logo {
+        display: block;
+        margin: 0 auto 20px; 
+        max-width: 250px;
+        height: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .nav-button {
+        background: none;
+        border: none;
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .nav-button:hover {
+        color: rgb(159, 159, 159);
+    }
+
+    /* Hero Styling */
+    .hero-page {
+        padding: 20px 30px;
+    }
+
+    .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 0px 50px;
+    }
+
+    .hero-title-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-left {
+        color: #000000;
+    }
+
+    .hero-right img.solo {
+        width: 100%;
+        height: auto;
+    }
+
+    /* About Me Styling */
+    .aboutme-page {
+        padding: 50px 30px;
+    }
+
+    .aboutme-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+        padding: 0px 50px;
+    }
+
+    .aboutme-left img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .aboutme-right {
+        flex: 1;
+        color: rgb(0, 0, 0);
+    }
+
+    /* Visual Identity Styling */
+    .visualidentity-page {
+        padding: 20px 30px;
+    }
+
+    .visualidentity-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr; 
+        gap: 20px;
+        align-items: start;
+        padding: 0px 50px;   
+    }
+
+    .visualidentity-right img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Hack404 Styling */
+    .hack404-page {
+        padding: 20px 30px;
+    }
+
+    .hack404-upper-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 20px;
+        align-items: start;
+        padding: 0px 50px;
+    }
+
+    .hack404-left {
+        color: black;
+    }
+
+    .hack404-middle img,
+    .hack404-right img {
+        width: 100%;
+        height: auto;
+    }
+
+    .hack404-lower-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 20px;
+        align-items: start;
+        padding: 0px 50px;
+    }
+
+    .hack404-lower-text {
+        grid-column: 2 / 4;
+    }
+    
+    /* Photography Styling */
+    .photography-page { 
+        padding: 20px 30px;
+    }
+
+    .photography-container { 
+        padding: 0px 50px;
+    }
+
+    .photography-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Footer Styling */
+    .footer-page {
+        padding: 10px 70px;
+    }
+
+    .footer-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* ensures equal column widths */
+    }
+
+    .footer-table td {
+        padding: 20px 30px; /* matches photography grid padding */
+        vertical-align: top;
+    }
+
+    .footer-left img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-middle,
+    .footer-right {
+        color: black;
+        font-size: 16px;
+    }
+
+    .footer-middle a {
+        color: rgb(0, 119, 255);
+        text-decoration: none;
+        position: relative;
+    }
+
+    .footer-middle a::after { /* code learnt and applied from W3 Schools under CSS ::after Pseudo-element */
+        content: "→";
+        display: inline-block;
+        margin-left: 5px;
+        font-weight: bold;
+        transform: rotate(-45deg);
+        vertical-align: middle;
+    }
+
+    .footer-middle a:hover {
+        color: rgb(19, 0, 189);
+    }
+
+    .footer-credit {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    /* Graphics Styling */
+    .notebook-doodle {
+        width: 250px;      
+        display: block;
+        margin-top: 350px;
+    }
+
+    .flower-doodle {
+        width: 70px;
+        display: block;
+    }
+
+    .flower2-doodle {
+        width: 100px;
+        padding: 20px 0px 0px 200px;
+        display: block;
+    }
+
+    .dashes-doodle {
+        width: 60px;
+        display: block;
+    }
+
+    .computer-doodle {
+        width: 220px;
+        display: block;
+        margin-top: 50px;
+    }
+
+    .mouse-doodle {
+        width: 180px;
+        display: block;
+        margin-left: 260px;
+    }
+
+    .section-line {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        margin: 20px 0;
+    }
+
+    .skill-bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0 25px 0;
+    }
+
+    .skill-pill {
+        padding: 8px 16px;
+        background-color: #e6e6e6;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        border: 1px solid #cfcfcf;
+    }
+
+    .arrow-icon {
+        width: 20px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    
+    /* Table Styling */
+    .project-info-table {
+        width: 100%;
+        margin: 0;
+    }
+
+    .project-info-table th,
+    .project-info-table td {
+        text-align: left;
+        vertical-align: top;
+        width: 50px;
+        max-width: 50px;
+        min-width: 50px;
+    }
+
+    /* id page jump styling */
+    #hero {
+        scroll-margin-top: 130px;  
+    }
+
+    #aboutme {
+        scroll-margin-top: 150px;  
+    }
+
+    #projects {
+        scroll-margin-top: 100px;
+    }
+
+    #photography {
+        scroll-margin-top: 250px;
+    }
+
+    #contactme {
+        scroll-margin-top: 250px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="outer-container">
+
+        <!-- Navbar -->
+        <div class="navbar" id="navbar">
+            <a href="#hero">
+                <img class="img-logo" src="original.png" alt="signature">
+            </a>
+
+            <div class="nav-links">
+                <a class="nav-button" href="#aboutme">About Me</a>
+                <a class="nav-button" href="#projects">Projects</a>
+                <a class="nav-button" href="#photography">Photography</a>
+                <a class="nav-button" href="#contactme">Contact</a>
+            </div>
+        </div>
+
+        <div class="content-container">
+        
+        <!--Hero Page-->
+        <section class="hero-page" id="hero">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <div class="hero-title-container">
+                        <img class="flower-doodle" src="flower_doodle.png" alt="flower doodle">
+                        <h2>Hi! I'm <span class="caveat">Charlene</span></h2>
+                    </div>
+                    <p>
+                        I’m passionate about expanding my skills across graphic design, 
+                        UX/UI, and other creative disciplines. With a strong curiosity and desire to learn, 
+                        I enjoy exploring new techniques and methods of visual communication.
+                    </p>
+                    <div class="section-line"></div>
+                    <p>
+                        <img class="arrow-icon" src="arrow.png" alt="arrow">
+                        Learn more about me
+                    </p>
+                </div>
+
+                <div class="hero-right">
+                    <img class="solo" src="solo.png" alt="solo">
+                </div>
+            </div>
+        </section>
+
+        <!--About Me Page-->
+        <section class="aboutme-page" id="aboutme">
+            <div class="aboutme-container">
+
+                <div class="aboutme-left">
+                    <img class="img-headshot" src="headshot.jpg" alt="headshot">
+                </div>
+
+                <div class="aboutme-right">
+                    <div class="hero-title-container">
+                        <h2>About Me</h2>
+                        <img class="dashes-doodle" src="dashes_doodle.png" alt="dashes doodle">
+                    </div>
+                    
+                    <p>I’m a design student currently studying Global Business and Digital Arts at the University of Waterloo. 
+                        My goal in every design project is to bring artistic visions to life, and to communicate my perspective 
+                        in meaningful, engaging ways. I strive to create work that not only captures attention but also invites 
+                        people to think, feel, and connect with the ideas behind it.
+                    </p>
+                    <div class="section-line"></div>
+                    <p>
+                        <img class="arrow-icon" src="arrow.png" alt="arrow">
+                        Check out my projects
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROJECTS DIVIDER -->
+        <div class="divider-container" id="projects">
+            <h3 class="divider-text">Projects</h3>
+        </div>
+
+        <!--Projects Page-->
+        <section class="projects-page">
+
+            <!--Visual Identity Page-->
+            <div class="visualidentity-page">
+                <div class="visualidentity-container">
+                    <div class="visualidentity-left">
+                        <h2>Visual Identity Design</h2>
+                        <div class="skill-bubbles">
+                            <div class="skill-pill">Brand Strategy</div>
+                            <div class="skill-pill">Graphic Design</div>
+                        </div>
+                        <p>This project explores the creation of a visual identity for a personal brand, including a logo, an 
+                            accompanying poster, and mockups applying the logo to real-world objects.
+                        </p>
+
+                        <img class="notebook-doodle" src="notebook_doodle.png" alt="notebook doodle">
+
+                    </div>
+
+                    <div class="visualidentity-right">
+                        <img class="img-visualidentitylogo" src="identityLogo.jpg" alt="visual identity logo">
+                        <p>The design revolves around the themes of authenticity and spontaneity and is represented 
+                            through two key symbols: a bird and a book. The logo features a mockingbird composed of 
+                            two elements: the wings, formed by a book with layered pages, and the body, represented 
+                            by a cursive “s.” The top of the “s” forms the bird’s head while the curves mimic the body 
+                            and stomach, and the tail symbolizes both a feathered tail and a bookmark. All components 
+                            work together to express the concept of knowledge, freedom, and expression.
+                        </p>
+                        <div class="section-line"></div>
+                        <table class="project-info-table">
+                            <tr>
+                                <th>Year</th>
+                                <th>Duration</th>
+                                <th>Tools</th>
+                            </tr>
+                            <tr>
+                                <td>2025</td>
+                                <td>3 weeks</td>
+                                <td>Adobe Illustrator<br>Adobe Photoshop</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEXT PROJECT DIVIDER -->
+          
+            <div class="divider-container">
+                <h3 class="divider-text">Check out the next project:</h3>
+            </div>
+
+            <!--Hack404 Page-->
+            <div class="hack404-page">
+                <div class="hack404-upper-container">
+                    <div class="hack404-left">
+                        <h2>Hack404 Project</h2>
+                            <div class="skill-bubbles">
+                            <div class="skill-pill">UX/UI</div>
+                            <div class="skill-pill">Brand Strategy</div>
+                        </div>
+                        <p>
+                        Hack404 is a 36-hour Toronto-based high school and post-secondary hackathon. 
+                        For this event, I had the incredible opportunity to collaborate closely with the 
+                        design team as a Design Organizer to bring Hack404's creative vision to life.
+                        </p>
+                    </div>
+
+                    <div class="hack404-middle">
+                        <img src="hack404_1.png" alt="Hack404 Image 1">
+                    </div>
+
+                    <div class="hack404-right">
+                        <img src="hack404_2.png" alt="Hack404 Image 2">
+                    </div>
+                </div>
+
+                <div class="hack404-lower-container">
+
+                    <div class="hack404-lower-left">
+                        <img class="computer-doodle" src="computer_doodle.png" alt="computer doodle">
+                    </div>
+
+                    <div class="hack404-lower-text">
+                        <p>My journey with Hack404 started from designing the first iterations of the website and Instagram posts. 
+                            Then in the blink of an eye, I was designing some last-minute signage for the venue! Throughout this time, 
+                            I was able to see everything develop from the ground up and take part in creating a variety of design assets. 
+                            I even took on design tasks I hadn't tried before like designing a sponsorship package! It truly was a dream 
+                            working with such talented people as we all came together to tackle different aspects of Hack404's visuals.
+                        </p>
+                        <div class="section-line"></div>
+                        <table class="project-info-table">
+                            <tr>
+                                <th>Year</th>
+                                <th>Duration</th>
+                                <th>Tools</th>
+                                <th>Role</th>
+                            </tr>
+                            <tr>
+                                <td>2025</td>
+                                <td>3 months</td>
+                                <td>Figma</td>
+                                <td>Design Organizer</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PHOTOGRAPHY DIVIDER -->
+        <div class="divider-container">
+            <h3 class="divider-text">Photography</h3>
+        </div>
+
+        <!--Photography Page-->
+        <section class="photography-page" id="photography">
+            <div class="photography-container">
+                <div class="photography-grid">
+                    <div class="photo-item">
+                        <img src="AQuietBloom.jpg" alt="A Quiet Bloom">
+                        <p class="photo-caption">A Quiet Bloom — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="in77.jpg" alt="in77">
+                        <p class="photo-caption">in77 — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="Guided.jpg" alt="Guided">
+                        <p class="photo-caption">Guided — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="Arches.jpg" alt="Arches">
+                        <p class="photo-caption">Arches — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="ArtFromAbove.jpg" alt="Art From Above">
+                        <p class="photo-caption">Art From Above — 2023</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="FromTheGroundUp.jpg" alt="From The Ground Up">
+                        <p class="photo-caption">From The Ground Up — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="Bougainvillea.jpg" alt="Bougainvillea">
+                        <p class="photo-caption">Bougainvillea — 2023</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="Melons.jpg" alt="Melons">
+                        <p class="photo-caption">Melons — 2025</p>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="Taipei 101.jpg" alt="Taipei 101">
+                        <p class="photo-caption">Taipei 101 — 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT ME DIVIDER -->
+        <div class="divider-container">
+            <h3 class="divider-text">Contact Me</h3>
+        </div>
+
+        <!--Footer Page-->
+        <footer class="footer-page" id="contactme">
+        <table class="footer-table">
+            <tr>
+            <td class="footer-left">
+                <img src="headshot.jpg" alt="Contact Photo">
+            </td>
+
+            <td class="footer-middle">
+                <p><strong>Email</strong></p>
+                <p><a href="mailto:c387lee@uwaterloo.ca">c387lee@uwaterloo.ca</a></p>
+
+                <p><strong>LinkedIn</strong></p>
+                <p><a href="https://www.linkedin.com/in/charlenellee" target="_blank">in/charlenellee</a></p>
+
+                <p><strong>Instagram</strong></p>
+                <p><a href="https://www.instagram.com/charlene.llee" target="_blank">@charlene.llee</a></p>
+            </td>
+
+           <td class="footer-right">
+                <p><strong>Location</strong></p>
+                <p>ON, Canada</p>
+                <p>University of Waterloo</p>
+                <div>
+                    <img class="flower2-doodle" src="flower2_doodle.png" alt="flower2 doodle">
+                </div>
+            </td>
+            </tr>
+        </table>
+
+        </footer>
+
+        <!-- LETS GET CONNECTED DIVIDER-->
+        <div class="divider-container">
+            <h3 class="divider-text">Let's get connected!</h3>
+        </div>
+
+        <div class="footer-credit">
+            <p>2025 Charlene Lee — All Rights Reserved</p>
+        </div>
+
+    </div>
+  </div>
+</body>
+</html>
